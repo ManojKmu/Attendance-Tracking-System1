@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Image Upload Preview</title>
+    <style>
+        /* Styling the container */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgba(140, 0, 255, 0.629);
+        }
+
+        .upload-container {
+            background: orange;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: blue;
+        }
+
+        /* Styling the file input */
+        #imageUpload {
+            padding: 10px;
+            border: 2px dashed #007bff;
+            background: pink;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            outline: none;
+        }
+
+        #imageUpload:hover {
+            background: green
+        }
+
+        /* Styling the image preview */
+        .preview-container {
+            margin-top: 15px;
+        }
+
+        #imagePreview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid black;
+            padding: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="upload-container">
+        <h2>Upload Image/File</h2>
+        <input type="file" id="imageUpload" accept="image/*">
+        
+        <div class="preview-container">
+            <h3>Preview</h3>
+            <img id="imagePreview" src="" alt="Image preview will appear here.">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("imageUpload").addEventListener("change", function(event) {
+            const file = event.target.files[0]; // Get the selected file
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgElement = document.getElementById("imagePreview");
+                    imgElement.src = e.target.result; // Set the image source
+                    imgElement.style.display = "block"; // Show the image
+                };
+                reader.readAsDataURL(file); // Read the file as a Data URL
+            }
+        });
+    </script>
+
+</body>
+</html>
