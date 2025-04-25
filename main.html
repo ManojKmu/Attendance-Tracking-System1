@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <style>
+        .password-container {
+            position: relative;
+        }
+
+        .password-container input {
+            width: 90%;
+            padding-right: 40px; /* Space for the toggle button */
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 59%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-card" id="loginCard">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" placeholder="Enter your user ID" required><br><br>
+            </div>
+            <div class="form-group password-container">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <span class="toggle-password" id="togglePassword">👁️</span>
+            </div>
+            <button class="login-button" onclick="login()">Login</button>
+            <div id="errorMessage" class="error-message"></div>
+            <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+        </div>
+
+        <div class="forgot-password-card" id="forgotPasswordCard" style="display:none;">
+            <h2>Reset Password</h2>
+            <div class="form-group">
+                <label for="email">Enter your email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <button class="reset-button" onclick="resetPassword()">Reset Password</button>
+            <div id="resetMessage" class="success-message"></div>
+            <a href="#" onclick="showLogin()">Back to Login</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript for toggling password visibility
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.getElementById('togglePassword');
+
+        togglePassword.addEventListener('click', () => {
+            // Toggle between password and text input type
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+
+            // Toggle icon between "eye" and "eye-slash"
+            togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(koushik.jpg);
+}
+.navbar {
+    
+    color: yellow;
+    padding-right: 900px;
+    display: flex;
+    button {
+        margin-left: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        background-color: yellowgreen; /* Blue button color */
+        color: orange;
+    }
+    button:nth-child(2) {
+        background-color: ; /* Red for Delete */
+    }
+    button:hover {
+        background-color: rgb(226, 200, 200); /* Darker blue on hover */
+    }
+    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 18px;
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links a {
+    color: green;
+    text-decoration: none;
+    margin-left: 30px;
+    padding-top: 90px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+   background-color: white;
+   background-image: url(Network.jpg);
+   background-repeat: no-repeat;
+   width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1{
+    text-align: center;
+}
+h2 {
+    color: Green;
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+select {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid red;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: blue;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+strong {
+    margin-right: 10px;
+    flex-basis: auto;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+button {
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    color: orange;
+    border-radius: 20px;
+}
+
+button.absent,
+button.present,
+button.leave {
+    background-color: red;
+}
+
+button {
+    background-color:orange ;
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background-color: chartreuse;
+}
+
+/* Responsive styles for mobile view */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+}
+
+#resultSection {
+    margin-top: 20px;
+}
+
+#resultSection h3 {
+    margin-top: 10px;
+}
+
+#resultSection p {
+    margin-bottom: 5px;
+}
+
+#resultSection span {
+    font-weight: bold;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+button {
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+button.edit, button.delete {
+    margin-left: 10px;
+}
+
